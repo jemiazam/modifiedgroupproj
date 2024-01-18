@@ -1,30 +1,82 @@
-@include('layout.sidebar')
-
-<!doctype html>
+@extends('auth.layout')
+@section('home')
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-  	<title>LANDING PAGE</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIUM Club Registration System</title>
+    <!-- Include your CSS styles here -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-		
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="{{asset('import/css/style.css')}}">
-    
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
 
+        nav {
+            background-color: #444;
+            padding: 1em;
+            text-align: center;
+        }
 
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 1em;
+            margin: 0 1em;
+            font-weight: bold;
+        }
 
+        .hero {
+            text-align: center;
+            padding: 2em;
+        }
 
-  </head>
-  <body>
-		
+        .hero img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .info {
+            text-align: center;
+            padding: 2em;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            margin: 2em;
+        }
+
+        .card {
+            background-color: #f4f4f4;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 45%;
+        }
+    </style>
+</head>
+<body>
 
     <header>
         <h1>IIUM Club Registration System</h1>
     </header>
 
-
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Login</a>
+        <a href="#">Signup</a>
+    </nav>
 
     <div class="hero">
         <img src="https://i.ibb.co/68CXJC2/Whats-App-Image-2024-01-17-at-21-29-14-f46200f1.jpg" alt="IIUM Club Registration System Image">
@@ -57,13 +109,7 @@
         </ul>
     </div>
 
+@endsection
 
-
-
-    <script src="{{asset('import2/js/jquery.min.js')}}"></script>
-    <script src="{{asset('import2/js/popper.js')}}"></script>
-    <script src="{{asset('import2/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('import2/js/main.js')}}"></script>
-  </body>
-
+</body>
 </html>

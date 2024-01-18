@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class MembersController extends Controller
 {
-    public function index()
+    public function members()
     {
         // Retrieve members data from the database or any other source
         $members = [

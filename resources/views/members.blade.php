@@ -1,13 +1,13 @@
 @extends('layout.main')
-
+@include('layout.sidebar')
 @section('content')
 <body>
 
-
+<div id="content" class="p-4 p-md-5 pt-5">
     <h1>MEMBER LIST</h1>
 
     <!-- Default Table -->
-    <table class="table">
+    <table class="table" >
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -55,6 +55,7 @@
           </tr>
         </tbody>
       </table>
-      <!-- End Default Table Example -->
+
+</div >
     </body>
     @endsection

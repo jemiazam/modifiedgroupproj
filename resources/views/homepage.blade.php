@@ -17,7 +17,7 @@
         <link href="{{asset('import2/css/styles.css')}}" rel="stylesheet" />
     </head>
     <body id="page-top">
-    @include('layout.navbar')
+    @include('auth.layout')
         <!-- Masthead-->
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column ">

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class FriendsController extends Controller
 {
-    public function index()
+    public function friends()
     {
         // Retrieve friends data from the database or any other source
         $friends = [
