@@ -25,6 +25,88 @@
   <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
 
   <style>
+
+body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .card {
+    width: calc(33.33% - 20px);
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+    box-sizing: border-box;
+    }
+
+    .card:hover {
+        background-color: #8bc34a;
+        transform: translateY(-5px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-img-top {
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    .card-body {
+        padding: 10px;
+    }
+
+    .card-title {
+        font-size: 16px;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    .card-text {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 5px 15px;
+        border-radius: 20px;
+        background-color: #2196f3;
+        color: #fff;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #1976d2;
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .bd-placeholder-img {
       font-size: 1.125rem;
       text-anchor: middle;
@@ -104,7 +186,7 @@
   </style>
 
   <!-- Custom styles for this template -->
-  <link href="sidebars.css" rel="stylesheet">
+  {{-- <link href="sidebars.css" rel="stylesheet"> --}}
 </head>
 
 <body>
@@ -160,11 +242,11 @@
       <path
         d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
     </symbol>
-    
+
   </svg>
 
  <!--  <main class="d-flex flex-nowrap " style="min-height:100vh">
-     <h1 class="visually-hidden">Sidebars examples</h1> 
+     <h1 class="visually-hidden">Sidebars examples</h1>
 
     <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-info " style="width: 280px;">
       <a href="/home" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none display-4">
@@ -200,7 +282,7 @@
             Friends
           </a>
         </li>
-       
+
       </ul>
       <hr>
       <div class="dropdown">
@@ -220,12 +302,12 @@
         </ul>
       </div>
     </div>
-    
+
     <div class="d-flex flex-column p-3 text-bg-light border-start border-1 border-white ">
       <div class="container-fluid">
         @include('layout.navbar')
         <div class="container p-3 m-3">
-         
+
           @yield('content')
         </div>
       </div>
