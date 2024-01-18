@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class MembersController extends Controller
+class FriendsController extends Controller
 {
     public function index()
     {
-        // Retrieve members data from the database or any other source
-        $members = [
+        // Retrieve friends data from the database or any other source
+        $friends = [
             [
                 'name' => 'John Doe',
                 'email' => 'john@example.com',
@@ -18,10 +18,10 @@ class MembersController extends Controller
                 'name' => 'Jane Smith',
                 'email' => 'jane@example.com',
             ],
-            // Add more member data as needed
+            // Add more friend data as needed
         ];
 
-        // Pass the members data to the view
-        return view('members', compact('members'));
+        // Pass the friends data to the view
+        return view('friends', compact('friends'));
     }
 }
