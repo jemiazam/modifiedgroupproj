@@ -35,7 +35,7 @@
             <a href="#"><span class="fa fa-sticky-note mr-3"></span> Subcription</a>
           </li>
           <li>
-            <a href="#"><span class="fa fa-paper-plane mr-3"></span> Settings</a>
+            <a href="{{ route('logout') }}" method="post"><span class="fa fa-paper-plane mr-3"></span> Sign out</a>
           </li>
           <li>
             <a href="#"><span class="fa fa-paper-plane mr-3"></span> Information</a>

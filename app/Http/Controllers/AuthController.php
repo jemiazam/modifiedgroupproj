@@ -1,94 +1,63 @@
 <?php
-
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
+use Hash;
+use Session;
 use App\Models\User;
-
-
-
+use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
-    public function login(){
+    public function index()
+    {
         return view('auth.login');
     }
-    public function register(){
-        return view('auth.register');
-    }
-
-    public function postLogin(Request $request)
+    public function customLogin(Request $request)
     {
         $request->validate([
             'email' => 'required',
             'password' => 'required',
         ]);
-   
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             return redirect()->intended('dashboard')
-                        ->withSuccess('You have Successfully loggedin');
+                ->withSuccess('Signed in');
         }
-  
-        return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
+        return redirect("login")->withSuccess('Login details are not valid');
     }
-      
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
-    public function postRegistration(Request $request)
-    {  
+    public function registration()
+    {
+        return view('auth.register');
+    }
+    public function customRegistration(Request $request)
+    {
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
         ]);
-           
         $data = $request->all();
         $check = $this->create($data);
-         
-        return redirect("dashboard")->withSuccess('Great! You have Successfully loggedin');
+        return redirect("dashboard")->withSuccess('You have signed-in');
     }
-    
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
-    public function dashboard()
-    {
-        if(Auth::check()){
-            return view('dashboard');
-        }
-  
-        return redirect("login")->withSuccess('Opps! You do not have access');
-    }
-    
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
     public function create(array $data)
     {
-      return User::create([
-        'name' => $data['name'],
-        'email' => $data['email'],
-        'password' => Hash::make($data['password'])
-      ]);
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password'])
+        ]);
     }
-    
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
-    public function logout() {
+    public function dashboard()
+    {
+        if (Auth::check()) {
+            return view('dashboard');
+        }
+        return redirect("login")->withSuccess('You are not allowed to access');
+    }
+    public function signOut()
+    {
         Session::flush();
         Auth::logout();
-  
         return Redirect('login');
     }
 }

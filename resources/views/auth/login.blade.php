@@ -1,74 +1,51 @@
+@extends('auth.layout')
+@section('content')
 
-<!doctype html>
-<html lang="en">
-  <head>
-  	<title>Login 04</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+    body {
+    padding: 90px;
+    margin: 20px;
+    }
+</style>
 
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
-
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-	<link rel="stylesheet" href="{{asset('loginimport/css/style.css')}}">
-	<link href="{{asset('import2/css/styles.css')}}" rel="stylesheet" />
-
-	</head>
-	<body>
-	@include('layout.navbar')
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row justify-content-center">
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-md-12 col-lg-10">
-					<div class="wrap d-md-flex">
-						<div class="img" style="background-image: url(loginimport/images/bg-2.jpg);">
-			      </div>
-						<div class="login-wrap p-4 p-md-5">
-			      	<div class="d-flex">
-			      		<div class="w-100">
-			      			<h3 class="mb-4">Sign In</h3>
-			      		</div>
-			      	</div>
-							<form action="{{ route('login.post') }}" method="POST" class="signin-form">
-								@csrf
-			      		<div class="form-group mb-3">
-			      			<label class="label" for="email">Email
-			      			<input type="text" class="form-control" placeholder="Email" required>
-			      		</div>
-		            <div class="form-group mb-3">
-		            	<label class="label" for="password">Password</label>
-		              <input type="password" class="form-control" placeholder="Password" required>
-		            </div>
-		            <div class="form-group">
-		            	<button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
-		            </div>
-		            <div class="form-group d-md-flex">
-		            	<div class="w-50 text-left">
-			            	<label class="checkbox-wrap checkbox-primary mb-0">Remember Me
-									  <input type="checkbox" checked>
-									  <span class="checkmark"></span>
-										</label>
-									</div>
-									<div class="w-50 text-md-right">
-										<a href="#">Forgot Password</a>
-									</div>
-		            </div>
-		          </form>
-		          <p class="text-center">Not a member? <a data-toggle="tab" href="{{ route('register') }}">Sign Up</a></p>
-		        </div>
-		      </div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<script src="js/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
-
-	</body>
-</html>
-
+<main class="login-form">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <h3 class="card-header text-center">Login</h3>
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('login.custom') }}">
+                            @csrf
+                            <div class="form-group mb-3">
+                                <input type="text" placeholder="Email" id="email" class="form-control" name="email"
+                                    required autofocus>
+                                @if ($errors->has('email'))
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                                @endif
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="password" placeholder="Password" id="password" class="form-control"
+                                    name="password" required>
+                                @if ($errors->has('password'))
+                                <span class="text-danger">{{ $errors->first('password') }}</span>
+                                @endif
+                            </div>
+                            <div class="form-group mb-3">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="remember"> Remember Me
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="d-grid mx-auto">
+                                <button type="submit" class="btn btn-dark btn-block">Sign in</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+@endsection
