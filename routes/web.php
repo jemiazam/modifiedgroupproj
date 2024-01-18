@@ -18,16 +18,10 @@ use App\Http\Controllers\ClubsController;
 
 
 //dashboard
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-
-Route::get('/',[HomeController::class,'index'])->name('home');
-Route::get('login', [AuthController::class, 'login'])->name('login');
-Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post'); 
-Route::get('registration', [AuthController::class, 'register'])->name('register');
-Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post'); 
-Route::get('dashboard', [AuthController::class, 'dashboard']); 
-Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-
-Route::get('/clubs', [ClubsController::class, 'index'])->name('clubs.index');
+Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
+Route::get('login', [AuthController::class, 'index'])->name('login');
+Route::post('custom-login', [AuthController::class, 'customLogin'])->name('login.custom');
+Route::get('register', [AuthController::class, 'registration'])->name('register');
+Route::post('custom-registration', [AuthController::class, 'customRegistration'])->name('register.custom');
+Route::get('logout', [AuthController::class, 'signOut'])->name('logout');
