@@ -28,7 +28,7 @@
 
 body {
         font-family: Arial, sans-serif;
-        margin: 10;
+        margin: 100px;
         padding: 0;
     }
 
@@ -114,25 +114,22 @@ body {
     /* start member table styling */
 
     .table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+      margin:90px
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+    }
 
-        .table th,
-        .table td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
+.table th {
+background-color: #333; /* Custom header background color */
+color: #6AC5BD; /* Custom header text color */
+}
 
-        .table th {
-            background-color: #f5f5f5;
-        }
-
-        .table tbody tr:hover {
-            background-color: #f9f9f9;
-        }
-
+.table td,
+.table th {
+padding: 10px; /* Custom cell padding */
+border: 1px solid #ccc; /* Custom cell border */
+}
 
     /* end member table styling */
 

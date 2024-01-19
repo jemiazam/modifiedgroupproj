@@ -1,4 +1,4 @@
-@include('layout.sidebar')
+@include('auth.layout')
 
 <!doctype html>
 <html lang="en">
@@ -11,7 +11,59 @@
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="{{asset('import/css/style.css')}}">
-    
+        <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+        nav {
+            background-color: #444;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 1em;
+            margin: 0 1em;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 2em;
+        }
+
+        .hero img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .info {
+            text-align: center;
+            padding: 2em;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            margin: 2em;
+        }
+
+        .card {
+            background-color: #f4f4f4;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 45%;
+        }
+    </style>
 
 
 
@@ -27,12 +79,12 @@
 
 
     <div class="hero">
-        <img src="https://i.ibb.co/68CXJC2/Whats-App-Image-2024-01-17-at-21-29-14-f46200f1.jpg" alt="IIUM Club Registration System Image">
-        <h2>Welcome to IIUM Club Registration System</h2>
+        <img src="https://img.freepik.com/free-photo/asian-businessmen-businesswomen-meeting-brainstorming-ideas-about-creative-web-design-planning-application-developing-template-layout-mobile-phone-project-working-together-small-office_7861-2682.jpg?w=1380&t=st=1705621670~exp=1705622270~hmac=2f44a0de429485649749d38c1f8716903eae5ed215c70a4f6019bfb489332448" alt="IIUM Club Registration System Image">
+        <h2>Welcome to ClubHub</h2>
     </div>
 
     <div class="info">
-        <p>The IIUM Club Registration System is designed to modernize and simplify the process of enrolling in clubs or organizations at the International Islamic University Malaysia (IIUM). By providing a centralized platform, it offers a convenient and accessible way for individuals to register and join clubs from any location with internet connectivity. The website also includes a comprehensive club directory page, where users can browse through the available clubs. Each club listing provides information and details about the club, allowing users to make informed decisions when selecting clubs to join.</p>
+        <p>ClubHub is designed to modernize and simplify the process of enrolling in clubs or organizations at the International Islamic University Malaysia (IIUM). By providing a centralized platform, it offers a convenient and accessible way for individuals to register and join clubs from any location with internet connectivity. The website also includes a comprehensive club directory page, where users can browse through the available clubs. Each club listing provides information and details about the club, allowing users to make informed decisions when selecting clubs to join.</p>
     </div>
 
     <div class="features">
@@ -47,15 +99,6 @@
         </div>
     </div>
 
-    <div class="features">
-        <h2>Key Features</h2>
-        <ul>
-            <li>Login page/Register</li>
-            <li>Club page</li>
-            <li>Friends page</li>
-            <li>Notifications page</li>
-        </ul>
-    </div>
 
 
 

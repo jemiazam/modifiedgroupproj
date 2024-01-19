@@ -1,5 +1,5 @@
 @extends('auth.layout')
-@section('home')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -109,7 +109,7 @@
         </ul>
     </div>
 
-@endsection
+
 
 </body>
 </html>

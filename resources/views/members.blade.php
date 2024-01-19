@@ -1,5 +1,5 @@
 @extends('layout.main')
-@include('layout.sidebar')
+@include('auth.layout')
 @section('content')
 <body>
 
